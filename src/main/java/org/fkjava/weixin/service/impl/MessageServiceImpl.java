@@ -18,8 +18,10 @@ public class MessageServiceImpl implements MessageService {
 	private static final Logger LOG = LoggerFactory.getLogger(MessageServiceImpl.class);
 
 	@Autowired // 自动注入
-	@Qualifier("inMessageTemplate") // 根据名字自动注入
-	private RedisTemplate<String, ? extends InMessage> inMessageTemplate;
+    private RedisTemplate redisTemplate;
+
+//	@Qualifier("inMessageTemplate") // 根据名字自动注入
+//	private RedisTemplate<String, ? extends InMessage> inMessageTemplate;
 
 	@Override
 	public OUtMessage onMessage(InMessage msg) {
@@ -29,7 +31,8 @@ public class MessageServiceImpl implements MessageService {
 		// 不同的消息由于处理方式不同，所以建议放入不同的通道中，队列里面可以有近乎无数的通道。
 		// 如果多人共享一个服务器，还需要在通道前面增加一个特征。kemao_3_就是特征。
 		// msg.getMsgType()把不同类型的消息放入不同通道。
-		inMessageTemplate.convertAndSend("zjx_" + msg.getMsgType(), msg);
+		redisTemplate.convertAndSend("zjx_" + msg.getMsgType(), msg);
+//		redisTemplate.convertAndSend("test", "hello");
  
 		// 返回的信息先不管
 		return null;
