@@ -1,4 +1,4 @@
-xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Default logback configuration provided for import, equivalent to the 
 	programmatic initialization performed by Boot -->
@@ -19,9 +19,9 @@ xml version="1.0" encoding="UTF-8"?>
 	<!-- org.fkjava能够匹配到相同包里面的全部类的日志记录器 -->
 	<!-- trace是最详细的日志跟踪级别，可以输出完整的日志信息 -->
 	<!-- trace > debug > info > warn > error > off -->
-	<logger name="org.fkjava" level="trace" /> 
+	<logger name="org.fkjava" level="trace" />
 
-	<root level="error">  
-		<appender-ref ref="CONSOLE" /> 
+	<root level="error">
+		<appender-ref ref="CONSOLE" />
 	</root>
 </configuration>
