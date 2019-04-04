@@ -4,7 +4,7 @@ spring.datasource:
    # useSSL=false 表示不使用SSL加密
    # serverTimezone=CST 指定服务器的时区，CST（China Standard Time）
    url: jdbc:mysql://127.0.0.1:3306/zjxweixintest?useSSL=false&serverTimezone=CST&allowPublicKeyRetrieval=true
-   username: root
-   password: 1234
+   username: zjx
+   password: Zhu990409
     
 server.port: 8072
